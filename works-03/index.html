@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bold Consulting Service</title>
+    <meta name="description" content="サイトの概要文">
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/yet5cjv.css">
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- js -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.9.1/rellax.min.js"></script>
+    <script src="js/script.js"></script>
+  </head>
+  <body>
+    <!-- header -->
+    <header class="header js-header">
+      <div class="header__inner">
+        <h1 class="header__title"><a href="">Bold Consulting Service</a></h1>
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li class="header__nav-item"><a href="#about" class="header__nav-link">ABOUT</a></li>
+            <li class="header__nav-item"><a href="#service" class="header__nav-link">SERVICE</a></li>
+            <li class="header__nav-item"><a href="#flow" class="header__nav-link">FLOW</a></li>
+            <li class="header__nav-item"><a href="#member" class="header__nav-link">MEMBERS</a></li>
+            <li class="header__nav-item"><a href="#faq" class="header__nav-link">FAQ</a></li>
+            <li class="header__nav-item"><a href="#contact" class="header__nav-link">CONTACT</a></li>
+            <li class="header__nav-item"><a href="#company" class="header__nav-link">COMPANY</a></li>
+          </ul>
+        </nav>
+        <button class="header__menu js-menu">
+          <span class="header__menu-inline"></span>
+          <span class="header__menu-inline"></span>
+        </button>
+      </div>
+    </header>
+    <!-- // header -->
+
+    <!-- main -->
+    <main class="main">
+      <!-- top -->
+      <section class="top">
+        <div class="top__message">
+          <p class="top__message-text">大胆に<br>ゴールまで</p><br>
+          <p class="top__message-text">たどり着きます</p>
+          <p class="top__message-tagline is-pc">Design consulting</p>
+        </div>
+        <div class="top__inner">
+          <div class="top__picture">
+            <img src="images/img_top.png" alt="" class="top__picture-image js-rellax" data-rellax-speed="3">
+          </div>
+          <div class="top__scroll"><span class="top__scroll-bar"></span></div>
+          <div class="top__copyright"><p class="top__copyright-text">©my portfolio</p></div>
+        </div>
+      </section>
+      <!-- // top -->
+
+      <!-- point -->
+      <section id="point" class="point">
+        <div class="point__inner">
+          <h2 class="section-title">
+            <span class="en">POINT</span>
+            <span class="ja title-color-main">選ばれる3つのポイント</span>
+          </h2>
+          <div class="point__wrap">
+            <div class="point__flowing">
+              <p class="point__flowing-text flowing-anime-first">Go Bold Go Bold</p>
+              <p class="point__flowing-text flowing-anime-second">Go Bold Go Bold</p>
+            </div>
+            <ul class="point__list">
+              <li class="point__item">
+                <div class="point__item-thumb"><img src="images/ico_point01.svg" alt="" class="point__item-image"></div>
+                <div class="point__item-body"><p class="point__item-title">WEBクリエイティブを<br>丸投げ可能</p></div>
+              </li>
+              <li class="point__item">
+                <div class="point__item-thumb"><img src="images/ico_point02.svg" alt="" class="point__item-image"></div>
+                <div class="point__item-body"><p class="point__item-title">各WEB領域のプロが所属する<br>クリエイタータレント事務所</p></div>
+              </li>
+              <li class="point__item">
+                <div class="point__item-thumb"><img src="images/ico_point03.svg" alt="" class="point__item-image"></div>
+                <div class="point__item-body"><p class="point__item-title">集客・売上最大化を見据えた<br>WEBコンサルティング</p></div>
+              </li>
+            </ul>
+            <div class="point__flowing">
+              <p class="point__flowing-text flowing-anime-first">Go Bold Go Bold</p>
+              <p class="point__flowing-text flowing-anime-second">Go Bold Go Bold</p>
+            </div>
+          </div>
+          <div class="point__picture">
+            <picture>
+              <source media="(max-width: 750px)" srcset="images/img_point-s.png">
+              <img src="images/img_point.png" alt="" class="point__picture-image">
+            </picture>
+          </div>
+          <div class="point__message">
+            <p class="point__message-text">
+              私たちは、新しいベンチャーやサービスが国内だけに限らず、
+              世界にも普及する手助けをします。
+              プロとして時には、大切な仲間として、
+              <span class="text-marker">一緒に事を成し遂げるために伴走します。</span>
+            </p>
+          </div>
+          <div class="side__title -point">WHAT WE ARE</div>
+        </div>
+      </section>
+      <!-- // point -->
+
+      <!-- service -->
+      <section id="service" class="service">
+        <h2 class="section-title title-service">
+          <span class="en">SERVICE</span>
+        </h2>
+        <div class="service__about">
+          <div class="service__about-inner">
+            <div class="service__about-image"><img src="images/img_service01.png" alt=""></div>
+            <dl class="service__about-contents">
+              <dt class="service__about-title">プロフェッショナル達が<br>貴社のビジネスをサポート</dt>
+              <dd class="service__about-text">
+                国内外のテック系ベンチャー企業を中心に、グルーバルへの進出、
+                日本市場開拓に向けたプロダクトやサービスの立ち上げ、
+                セールス、マーケティングの支援を行います。
+                共に戦略を立て、サービスや事業、会社の成長に寄与します。
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <ul class="service__list">
+          <li class="service__item">
+            <dl>
+              <dt class="service__item-title">WEB集客</dt>
+              <dd class="service__item-thumb"><img src="images/ico_service01.svg" alt="" class="service__item-image"></dd>
+              <dd class="service__item-desc">
+                <ul class="service__lineup">
+                  <li class="service__lineup-item">googleリスティング広告</li>
+                  <li class="service__lineup-item">ディスプレイ広告</li>
+                  <li class="service__lineup-item">Facebook/Instagram広告</li>
+                  <li class="service__lineup-item">Twitter広告</li>
+                  <li class="service__lineup-item">YOUTUBE広告/LINE広告</li>
+                </ul>
+              </dd>
+            </dl>
+          </li>
+          <li class="service__item">
+            <dl>
+              <dt class="service__item-title">WEBサイト制作</dt>
+              <dd class="service__item-thumb"><img src="images/ico_service02.svg" alt="" class="service__item-image"></dd>
+              <dd class="service__item-desc">
+                <ul class="service__lineup">
+                  <li class="service__lineup-item">販促用LP</li>
+                  <li class="service__lineup-item">コーポレートサイト</li>
+                  <li class="service__lineup-item">採用サイト</li>
+                  <li class="service__lineup-item">ECサイト等</li>
+                </ul>
+              </dd>
+            </dl>
+          </li>
+          <li class="service__item">
+            <dl>
+              <dt class="service__item-title">動画制作</dt>
+              <dd class="service__item-thumb"><img src="images/ico_service03.svg" alt="" class="service__item-image"></dd>
+              <dd class="service__item-desc">
+                <ul class="service__lineup">
+                  <li class="service__lineup-item">動画広告制作</li>
+                  <li class="service__lineup-item">社内研修動画制作</li>
+                  <li class="service__lineup-item">番組制作等（撮影 / 編集）</li>
+                </ul>
+              </dd>
+            </dl>
+          </li>
+          <li class="service__item">
+            <dl>
+              <dt class="service__item-title">WEBサービス開発</dt>
+              <dd class="service__item-thumb"><img src="images/ico_service04.svg" alt="" class="service__item-image"></dd>
+              <dd class="service__item-desc">
+                <ul class="service__lineup">
+                  <li class="service__lineup-item">マッチングサービス</li>
+                  <li class="service__lineup-item">口コミサービス</li>
+                  <li class="service__lineup-item">サブスクリプション型サービス等</li>
+                </ul>
+              </dd>
+            </dl>
+          </li>
+        </ul>
+        <div class="service__feature">
+          <div class="service__feature-head">
+            <div class="service__feature-catch">
+              <p class="service__feature-num">122%</p>
+            </div>
+            <div class="service__feature-image"><img src="images/img_service02.png" alt=""></div>
+          </div>
+          <div class="service__feature-contents">
+            <dl>
+              <dt class="service__feature-title">平均で一年後に<br>およそ売上は122%に。</dt>
+              <dd class="service__feature-text">
+                数多くのテック系ベンチャー企業のサポート経験がある元VC、<br class="is-pc">
+                ベンチャー経営者が、貴社の進化をサポート。<br>
+                私たちのコンサルを受けたお客様の売上は<br class="is-tab">初年度平均22%のUPしております。
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </section>
+      <!-- // service -->
+
+      <!-- flow -->
+      <section id="flow" class="flow">
+        <div class="flow__head">
+          <h2 class="section-title title-flow">
+            <span class="en">FLOW</span>
+            <span class="ja">問い合わせ後の流れについて</span>
+          </h2>
+        </div>
+        <div class="flow__contents">
+          <ul class="flow__list">
+            <li class="flow__item">面談</li>
+            <li class="flow__item">提案 + <br>お見積り</li>
+            <li class="flow__item">施策実施<br><span class="flow__item-supply">ex) 広告運用など</span></li>
+            <li class="flow__item">売上向上</li>
+          </ul>
+          <div class="side__title -flow">FLOW</div>
+        </div>
+      </section>
+      <!-- // flow -->
+
+      <!-- member -->
+      <section id="member" class="member">
+        <div class="member__inner">
+          <h2 class="section-title title-member">
+            <span class="en">MEMBER</span>
+            <span class="ja">ボードメンバー</span>
+          </h2>
+          <div class="member__contents">
+            <div class="member__contents-picture">
+              <img src="images/img_member01.png" alt="" class="member__contents-image">
+            </div>
+            <div class="member__contents-profile">
+              <dl>
+                <dt class="member__contents-name">
+                  <span class="position">代表取締役社長</span>
+                  坂本竜馬
+                  <span class="ruby">（さかもとりょうま）</span>
+                </dt>
+                <div class="member__contents-about">
+                  <dd class="member__contents-text">
+                    龍馬は天保6年11月15日（1836年1月3日）[注 2]、
+                    土佐国土佐郡上街本町一丁目（現・高知県高知市上町一丁目）の
+                    土佐藩郷士（下級武士・足軽）坂本家に父・八平、母・幸の間の二男として生まれた。
+                    兄（権平）と3人の姉（千鶴、栄、乙女）がいた。
+                    坂本家は質屋、酒造業、呉服商を営む豪商才谷屋の分家で、
+                    第六代・直益のときに長男・直海が藩から郷士御用人に召し出されて坂本家を興した[1]。
+                    土佐藩の武士階級には上士と下士があり、
+                    商家出身の坂本家は下士（郷士）だったが（坂本家は福岡家に仕えていたという）、
+                    分家の際に才谷屋から多額の財産を分与されており、非常に裕福な家庭だった[2][3]。
+                  </dd>
+                  <dd class="member__contents-text">
+                    龍馬が生まれる前の晩に、
+                    母親が龍が天を飛ぶ瑞夢を見て[4]（または父が駿馬の母が蛟龍の夢を見たとも[5]）、
+                    それにちなんで龍馬と名づけられ、
+                    幼い龍馬の背には一塊の怪毛があった[6]という伝説がある。
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+          <div class="side__title -member">CREATORS</div>
+        </div>
+      </section>
+      <!-- // member -->
+      
+      <!-- faq -->
+      <section id="faq" class="faq">
+        <h2 class="section-title title-faq">
+          <span class="en">FAQ</span>
+          <span class="ja title-color-main">よくあるご質問はこちら</span>
+        </h2>
+        <dl class="faq__list">
+          <div class="faq__item js-faq">
+            <dt class="faq__header js-faq-header"><p class="faq__question">相談料はかかりますか？</p></dt>
+            <div class="faq__inner js-faq-inner">
+              <dd class="faq__body"><p class="faq__answer">相談料は頂いておりませんので、お気軽にご相談ください。</p></dd>
+            </div>
+          </div>
+          <div class="faq__item js-faq">
+            <dt class="faq__header js-faq-header"><p class="faq__question">費用はどれくらいになりますか？</p></dt>
+            <div class="faq__inner js-faq-inner">
+              <dd class="faq__body"><p class="faq__answer">ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。</p></dd>
+            </div>
+          </div>
+          <div class="faq__item js-faq">
+            <dt class="faq__header js-faq-header"><p class="faq__question">予算に合わせてご提案いただくことは可能でしょうか？</p></dt>
+            <div class="faq__inner js-faq-inner">
+              <dd class="faq__body"><p class="faq__answer">ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。</p></dd>
+            </div>
+          </div>
+          <div class="faq__item js-faq">
+            <dt class="faq__header js-faq-header"><p class="faq__question">支払いはいつ？</p></dt>
+            <div class="faq__inner js-faq-inner">
+              <dd class="faq__body"><p class="faq__answer">ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。</p></dd>
+            </div>
+          </div>
+          <div class="faq__item js-faq">
+            <dt class="faq__header js-faq-header"><p class="faq__question">実績は見せてもらえるのか？</p></dt>
+            <div class="faq__inner js-faq-inner">
+              <dd class="faq__body"><p class="faq__answer">ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。</p></dd>
+            </div>
+          </div>
+          <div class="faq__item js-faq">
+            <dt class="faq__header js-faq-header"><p class="faq__question">対応地域は関西のみでしょうか？</p></dt>
+            <div class="faq__inner js-faq-inner">
+              <dd class="faq__body"><p class="faq__answer">ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。</p></dd>
+            </div>
+          </div>
+        </dl>
+      </section>
+      <!-- // faq -->
+
+      <!-- contact -->
+      <section id="contact" class="contact">
+        <h2 class="section-title title-contact">
+          <span class="en">CONTACT</span>
+          <span class="ja title-color-title">問い合わせはこちらより</span>
+        </h2>
+        <div class="contact__contents">
+          <form action="" method="post" id="js-contactForm">
+            <ul class="contact__form-list">
+              <li class="contact__form-item">
+                <input type="text" name="company" placeholder="会社名 *" required>
+              </li>
+              <li class="contact__form-item">
+                <input type="text" name="name" placeholder="ご担当者名 *" required>
+              </li>
+              <li class="contact__form-item">
+                <input type="text" name="position" placeholder="役職">
+              </li>
+              <li class="contact__form-item">
+                <input type="email" name="email" placeholder="メールアドレス *" required>
+              </li>
+              <li class="contact__form-item">
+                <input type="tell" name="tell" placeholder="電話番号 ">
+              </li>
+              <div class="contact__form-item -message">
+                <textarea name="message" placeholder="問い合わせ内容 *" required></textarea>
+              </div>
+            </ul>
+          </form>
+          <button class="contact__button">送　信</button>
+        </div>
+      </section>
+      <!-- // contact -->
+
+      <!-- company -->
+      <section id="company" class="company">
+        <h2 class="section-title title-company">
+          <span class="en">COMPANY</span>
+        </h2>
+        <div class="company__contents">
+          <div class="company__contents-inner">
+            <dl class="company__info">
+              <dt class="company__info-title">
+                運営<br class="is-sp">会社
+              </dt>
+              <dd class="company__info-text">洗濯theNIPPON</dd>
+            </dl>
+            <dl class="company__info">
+              <dt class="company__info-title">代表者氏名</dt>
+              <dd class="company__info-text">坂本竜馬</dd>
+            </dl>
+            <dl class="company__info">
+              <dt class="company__info-title">住所</dt>
+              <dd class="company__info-text">長崎出島</dd>
+            </dl>
+            <dl class="company__info">
+              <dt class="company__info-title">資本金</dt>
+              <dd class="company__info-text">1,000,000円</dd>
+            </dl>
+            <dl class="company__info">
+              <dt class="company__info-title">事業<br class="is-sp">内容</dt>
+              <dd class="company__info-text">
+                <ul class="company__info-list">
+                  <li class="company__info-item">WEBコンサルティング業</li>
+                  <li class="company__info-item">ITコンサルティング業</li>
+                  <li class="company__info-item">採用コンサルティング業</li>
+                </ul>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </section>
+      <!-- // company -->
+    </main>
+    <!-- // main -->
+
+    <!-- footer -->
+    <footer class="footer js-footer">
+
+        <div class="footer__copyright">
+          <p class="footer__copyright-text"><small lang="en">©my portfolio</small></p>
+        </div>
+      <div class="footer__pagetop">
+        <a href="#" id="js-pageTop" class="footer__pagetop-link">PAGETOP</a>
+        <span class="footer__pagetop-bar"></span>
+      </div>
+    </footer>
+    <!-- // footer -->
+
+    <!-- btn-contact -->
+    <div class="btn__contact js-btn-contact">
+      <a href="#contact" class="btn__contact-link">相談してみる</a>
+    </div>
+    <!-- // btn-contact -->
+  </body>
+</html>
