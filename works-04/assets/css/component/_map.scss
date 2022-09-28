@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+.c-map {
+  &__top {
+    aspect-ratio: 1280 / 408;
+    width: 100%;
+
+    @include mq(sp) {
+        aspect-ratio: 375 / 408;
+    }
+  }
+
+  &__about {
+    aspect-ratio: 1280 / 575;
+    width: 100%;
+
+    @include mq(sp) {
+        aspect-ratio: 375 / 575;
+    }
+  }
+}

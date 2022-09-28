@@ -1,0 +1,101 @@
+@charset "utf-8";
+
+.p-contact {
+
+    &__contents {
+        width: unquote('min(84%, 840px)');
+        padding: clamp_size(108, 216) 0 clamp_size(105, 210);
+        margin: 0 auto;
+        
+    }
+
+    &__title {
+        font-size: clamp_size(18, 32);
+        font-weight: bold;
+        color: #5B5C5C;
+        letter-spacing: 0.126em;
+        text-align: center;
+    }
+
+    &__form-list {
+        margin-top: clamp_size(118, 236);
+        
+    }
+
+    &__form-item {
+        & + & {
+            margin-top: clamp_size(42, 84);
+            min-height: 0vw
+        }
+    }
+
+    &__form-title {
+        font-size: clamp_size(14, 18);
+        
+        color: #212121;
+    }
+
+    &__form-submit {
+        margin-top: clamp_size(38, 76);
+        
+    }
+
+    input {
+        &[type="text"],
+        &[type="email"],
+        &[type="tell"] {
+            appearance: none;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-bottom: 1px solid #ADADAD;
+            font-size: clamp_size(16, 18);
+            
+            color: #212121;
+            letter-spacing: 0.12em;
+            margin-top: 8px;
+        }
+
+        &[type="submit"] {
+            display: block;
+            width: 520px;
+            margin: 0 auto;
+            padding: clamp_size(26, 34) 0;
+            font-size: clamp_size(16, 32);
+            font-weight: 600;
+            font-family: $font-family-english;
+            color: #fff;
+            text-align: center;
+            letter-spacing: 0.126em;
+            border-radius: 100px;
+            background: linear-gradient(to bottom right, #364d6a 0%, #599dc0 100%);
+            background-size: 200% auto;
+            transition: all .3s $easeOutQuad;
+
+            &:hover {
+                transform: scale(0.95);
+                background-position: right center;
+            }
+        
+            @include mq(sp) {
+                width: 100%;
+            }
+        }
+    }
+
+    textarea {
+        appearance: none;
+        width: 100%;
+        min-height: 348px;
+        padding: 10px;
+        font-size: clamp_size(16, 18);
+        color: #212121;
+        letter-spacing: 0.12em;
+        border: 1px solid #ADADAD;
+        margin-top: 24px;
+    
+        @include mq(sp) {
+            min-height: 250px;
+        }
+    }
+}

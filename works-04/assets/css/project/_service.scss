@@ -1,0 +1,182 @@
+@charset "utf-8";
+
+.p-service {
+
+    &__contents {
+        padding: vw_pc(15);
+        background: #F2F2F2;
+    
+        @include mq(sp) {
+            padding: vw_sp(15);
+        }
+    }
+
+    &__inner {
+        padding: vw_pc(145) vw_pc(95);
+        
+        background: #fff;
+
+        @include mq(tab) {
+            padding: vw_tab(75) vw_tab(45);
+        }
+    }
+
+    &__list {
+        max-width: 1060px;
+        margin: 0 auto;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+
+        & + & {
+            margin-top: 120px;
+        }
+
+        @include mq(sp) {
+            flex-direction: column;
+        }
+
+        &-body {
+            width: unquote('min(50%, 530px)');
+
+            @include mq(sp) {
+                width: 100%;
+            }
+        }
+
+        &-title {
+            position: relative;
+            font-size: unquote('min(1.875vw, 2.4rem)');
+            
+            font-weight: bold;
+            letter-spacing: 0.126em;
+            padding: 1em 0 1em vw_pc(136);
+
+            @include mq(sp) {
+                font-size: vw_sp(24);
+                padding: 0.6em 0 0.6em vw_sp(135);
+            }
+
+            &::before {
+                position: absolute;
+                content: attr(data-number);
+                top: 0;
+                left: 0;
+                width: vw_pc(93);
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: unquote('min(1.5625vw, 2rem)');
+                
+                font-family: $font-family-english;
+                font-weight: 600;
+                color: #fff;
+                background: #2C334B;
+
+                @include mq(sp) {
+                    font-size: vw_sp(20);
+                    width: vw_sp(65);
+                }
+            }
+        }
+
+        &-text {
+            font-size: clamp_size(12, 14);
+            color: #888;
+            line-height: (24 / 14);
+            letter-spacing: 0.208em;
+            text-align: justify;
+            
+
+            &:first-of-type {
+                margin-top: 30px;
+            }
+
+            & + & {
+                margin-top: 36px;
+            }
+        }
+
+        &-detail {
+            width: unquote('min(45%, 478px)');
+            padding: vw_pc(64) vw_pc(40);
+            background: #FAFAFA;
+
+            @include mq(tab) {
+                padding: vw_tab(54) vw_tab(26);
+            }
+
+            @include mq(sp) {
+                width: 100%;
+                padding: vw_sp(44) vw_sp(26);
+                margin-top: 30px;
+            }
+        }
+
+        &-service {
+            position: relative;
+            font-size: clamp_size(16, 18);
+            
+            font-weight: bold;
+            color: #202037;
+            letter-spacing: 0.208em;
+            line-height: (30 / 20);
+            text-align: center;
+            
+            &.add-quotation {
+                margin-bottom: 3em;
+
+                &::before,
+                &::after {
+                    position: absolute;
+                    font-size: clamp_size(24, 64);
+                    font-weight: bold;
+                    color: #CDCDD2;
+                    
+                    top: -0.234375em;
+                }
+    
+                &::before {
+                    content: "“";
+                    left: 0;
+                }
+    
+                &::after {
+                    content: "”";
+                    right: 0;
+                }
+            }
+        }
+
+        &-list {
+            font-size: clamp_size(12, 14);
+            
+            font-weight: bold;
+            color: #888;
+            letter-spacing: 0.208em;
+
+            &::before {
+                content: "・";
+                font-size: clamp_size(12, 14);
+                font-weight: bold;
+                color: #888;
+                
+            }
+
+            & + & {
+                margin-top: 1.1em;
+            }
+
+            @include mq(tab) {
+                letter-spacing: 0.1em;
+            }
+        }
+
+        &-footer {
+            margin-top: 40px;
+        }
+    }
+}

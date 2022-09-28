@@ -1,0 +1,114 @@
+@charset "utf-8";
+
+@import "mixins/reset";
+@import "mixins/media";
+@import "mixins/animation";
+@import "mixins/variables";
+
+/* ==========================================================================
+# 共通設定
+========================================================================== */
+* {
+    min-height: 0vw;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    font-size: 1.6rem;
+    font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "Droid Sans", sans-serif;
+    color: #444;
+    line-height: (24 / 16);
+    overflow-x: hidden;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+img {
+    max-width: 100%;
+}
+input {
+    margin: 0;
+    padding: 0;
+
+    &[type="submit"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        padding: 0;
+        border: none;
+        outline: none;
+        background: transparent;
+    }
+}
+textarea {
+    padding: 0;
+    font: inherit;
+    color: inherit;  
+}
+button {
+    font: inherit;  
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    color: inherit;  
+    cursor: pointer;
+}
+
+/* ==========================================================================
+# display
+========================================================================== */
+@media screen and (min-width: 768px) {
+    .is-sp {
+        display: none;
+    }
+}
+@media screen and (max-width: 750px) {
+    .is-sp {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .is-pc {
+        display: block;
+    }
+}
+@media screen and (max-width: 750px) {
+    .is-pc {
+        display: none;
+    }
+}
+
+/* ==========================================================================
+# component
+========================================================================== */
+@import "component/btn";
+@import "component/btn-contact";
+@import "component/card";
+@import "component/entry";
+@import "component/pager";
+@import "component/map";
+
+/* ==========================================================================
+# layout
+========================================================================== */
+@import "layout/header";
+@import "layout/footer";
+
+/* ==========================================================================
+# project
+========================================================================== */
+@import "project/top";
+@import "project/about";
+@import "project/price";
+@import "project/service";
+@import "project/contact";
+@import "project/blog-list";
+@import "project/blog-detail";
+@import "project/error";

@@ -1,0 +1,164 @@
+@charset "utf-8";
+
+.p-about {
+
+    &__entrance {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: unquote('min(78%, 1000px)');
+        margin: vw_pc(-180) auto 0;
+        padding: vw_pc(72) vw_pc(46) vw_pc(85) vw_pc(114);
+        background: #FAFAFA;
+        z-index: 1;
+
+        @include mq(sp) {
+            flex-direction: column;
+            width: 100%;
+            padding: vw_sp(20) vw_sp(30);
+        }
+
+        &-left {
+            flex: 1;
+        }
+
+        &-right {
+            flex: 1;
+        }
+
+        &-copy {
+            font-size: clamp_size(18, 36);
+            
+            font-family: $font-family-english;
+            font-weight: 600;
+            color: #434343;
+            line-height: (49 / 36);
+            letter-spacing: 0.208em;
+        }
+
+        &-text {
+            font-size: clamp_size(14, 20);
+            
+            font-weight: bold;
+            color: #434343;
+            line-height: (40 / 20);
+            letter-spacing: 0.085em;
+
+            @include mq(sp) {
+                margin-top: vw_sp(12);
+            }
+        }
+    }
+
+    &__main {
+        width: unquote('min(84%, 1000px)');
+        margin: 88px auto 0;
+
+        @include mq(sp) {
+            width: 100%;
+            padding: 0 vw_sp(30);
+        }
+
+        &-title {
+            font-size: clamp_size(18, 24);
+            font-weight: bold;
+            color: #474747;
+            line-height: (40 / 24);
+            letter-spacing: 0.085em;
+        }
+
+        &-inner {
+            display: flex;
+            justify-content: space-between;
+
+            @include mq(sp) {
+                flex-direction: column;
+            }    
+        }
+
+        &-left {
+            flex: 1;
+        }
+
+        &-right {
+            flex: 1;
+            margin-left: 40px;
+
+            @include mq(sp) {
+                margin-left: 0;
+            }
+        }
+
+        &-text {
+            font-size: clamp_size(12, 14);
+            font-weight: bold;
+            color: #474747;
+            text-align: justify;
+            line-height: (28 / 14);
+            letter-spacing: 0.126em;
+            margin-top: 40px;
+        }
+    }
+
+    &__data {
+        margin-top: 113px;
+        padding: clamp_size(80, 160) 0 clamp_size(80, 133);
+        
+        background: #FAFAFA;
+
+        &-inner {
+            display: flex;
+            justify-content: space-between;
+            width: unquote('min(84%, 880px)');
+            margin: 0 auto;
+
+
+            @include mq(sp) {
+                flex-direction: column;
+            }
+        }
+
+        &-info {
+            flex: 1;
+        }
+
+        &-title {
+            font-size: clamp_size(18, 36);
+            
+            font-family: $font-family-english;
+            font-weight: 600;
+            color: #212F41;
+            letter-spacing: 0.126em;
+            line-height: (49 / 36);
+        }
+
+        &-list {
+            margin-top: 52px;
+        }
+
+        &-item {
+            & + & {
+                margin-top: clamp_size(18, 26);
+                
+            }
+        }
+        
+        &-text {
+            font-size: clamp_size(12, 20);
+            
+            font-weight: bold;
+            color: #505050;
+            letter-spacing: 0.126em;
+            line-height: (30 / 20);
+        }
+
+        &-image {
+            flex: 1;
+
+            @include mq(sp) {
+                margin-top: vw_sp(40);
+            }
+        }
+    }
+}

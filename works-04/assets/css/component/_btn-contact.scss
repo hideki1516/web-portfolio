@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+.c-contact {
+    padding: clamp_size(80, 135) 0 clamp_size(100, 155);
+
+    @include mq(sp) {
+        padding-left: vw_sp(30);
+        padding-right: vw_sp(30);
+    }
+
+    &__text {
+        font-size: clamp_size(16, 20);
+        font-weight: bold;
+        line-height: (30 / 20);
+        letter-spacing: 0.126em;
+        
+        text-align: center;
+    }
+
+    &__link {
+        margin-top: 36px;
+    }
+
+    &__btn {
+        display: block;
+        width: 520px;
+        margin: 0 auto;
+        padding: clamp_size(26, 34) 0;
+        font-size: clamp_size(16, 32);
+        font-weight: 600;
+        font-family: $font-family-english;
+        color: #fff;
+        text-align: center;
+        letter-spacing: 0.126em;
+        border-radius: 100px;
+        background: linear-gradient(to bottom right, #364d6a 0%, #599dc0 100%);
+        background-size: 200% auto;
+        transition: all .3s $easeOutQuad;
+
+        &:hover {
+            transform: scale(0.95);
+            background-position: right center;
+        }
+    
+        @include mq(sp) {
+            width: 100%;
+        }
+    }
+}

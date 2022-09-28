@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+.c-entry {
+
+    &__wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        aspect-ratio: 1280 / 288;
+        width: 100%;
+        max-height: 288px;
+        background: #202037;
+    }
+
+    &__title {
+        font-size: clamp_size(24, 48);
+        
+        font-family: $font-family-english;
+        font-weight: 600;
+        color: #fff;
+        letter-spacing: 0.208em;
+    }
+
+    &__thumb {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+
+        &.-about {
+            aspect-ratio: 1280 / 436;
+            max-height: 436px;
+        }
+
+        &.-service {
+            aspect-ratio: 1280 / 240;
+            max-height: 240px;
+        }
+    }
+
+    &__image {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+}

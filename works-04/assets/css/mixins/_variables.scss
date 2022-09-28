@@ -1,0 +1,48 @@
+@charset "utf-8";
+@use "sass:math";
+
+/* ==========================================================================
+# fonts
+========================================================================== */
+@font-face {
+    font-family: 'Avenir';
+    src:url('../font/metropolis-medium-webfont.woff2') format('woff2'),
+        url('../font/metropolis-medium-webfont.woff') format('woff');
+        font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src:url('../font/metropolis-bold-webfont.woff2') format('woff2'),
+        url('../font/metropolis-bold-webfont.woff') format('woff');
+        font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src:url('../font/metropolis-black-webfont.woff2') format('woff2'),
+        url('../font/metropolis-black-webfont.woff') format('woff');
+    font-weight: 700;
+}
+
+$font-family-default: '游ゴシック', YuGothic, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'Droid Sans', sans-serif;
+$font-family-english: 'Avenir', sans-serif;
+
+/* ==========================================================================
+# color
+========================================================================== */
+$color-primary: #202037;
+$color-white: #fff;
+
+/* ==========================================================================
+# clamp
+========================================================================== */
+@function clamp_size($min, $max) {
+    $width_small: 375;
+    $width_large: 1280;
+    $preferred_vw_base: math.div(($max - $min), ($width_large - $width_small));
+    $preferred_vw: ($preferred_vw_base * 100) * 1vw;
+    $preferred_rem: ($width_small * -1 * $preferred_vw_base + $min) * .1rem;
+    @return clamp(#{$min * .1rem}, #{$preferred_rem} + #{$preferred_vw}, #{$max * .1rem})
+}
+

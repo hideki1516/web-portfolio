@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+/* ==========================================================================
+# breakpoints
+========================================================================== */
+$breakpoints: (
+  'pc': 'screen and (min-width: 1026px)',
+  'tab': 'screen and (max-width: 1025px)',
+  'sp': 'screen and (max-width: 765px)'
+) !default;
+
+@mixin mq($breakpoint: sp) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+/* ==========================================================================
+# View Width
+========================================================================== */
+@function vw_pc($pixelsVw) {
+    $pcWidth : 1280;
+    $mathVW : ($pixelsVw / $pcWidth) * 100vw;
+    @return round($mathVW * 1000) / 1000;
+}
+
+@function vw_tab($pixelsVw) {
+  $spWidth : 1000;
+  $mathVW : $pixelsVw / $spWidth * 100vw;
+  @return round($mathVW * 1000) / 1000;
+}
+
+@function vw_sp($pixelsVw) {
+  $spWidth : 375;
+  $mathVW : $pixelsVw / $spWidth * 100vw;
+  @return round($mathVW * 1000) / 1000;
+}
+
+@function per($pixelsPer, $width) {
+  $mathPer : ($pixelsPer / $width) * 100%;
+  @return round($mathPer * 100) / 100;
+}

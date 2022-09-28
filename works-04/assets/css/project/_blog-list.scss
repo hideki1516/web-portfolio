@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+.p-list {
+
+    &__contents {
+        width: unquote('min(84%, 1100px)');
+        margin: unquote('min((58/375)*100vw,116px)') auto 0;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 100px 50px;
+        margin-top: clamp_size(30, 40);
+
+        @include mq(sp) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: vw_sp(22) vw_sp(18);
+        }
+    }
+
+}

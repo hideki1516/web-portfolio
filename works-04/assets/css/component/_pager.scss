@@ -1,0 +1,155 @@
+@charset "utf-8";
+
+.c-pager {
+    display: flex;
+    overflow-x: auto;
+    margin-top: unquote('min((68/375)*100vw,68px)');
+    padding-bottom: 20px;
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__item {
+        & + & {
+            margin-left: 14px;
+        }
+    }
+
+    &__link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: unquote('min((45/375)*100vw,45px)');
+        height: unquote('min((45/375)*100vw,45px)');
+        font-size: clamp_size(14, 16);
+        font-family: $font-family-english;
+        color: #1D1D1D;
+        border: 1px solid #707070;
+        transition: .25s;
+
+        &:focus,
+        &:hover {
+            color: #fff;
+            background: #202037;
+            border: 1px solid #202037;
+            opacity: .75;
+        }
+
+        &.is-current {
+            color: #fff;
+            background: #202037;
+            border: 1px solid #202037;
+            pointer-events: none;
+        }
+
+        &.next {
+            &::after {
+                content: "";
+                display: inline-block;
+                width: unquote('min((13/375)*100vw,13px)');
+                height: unquote('min((13/375)*100vw,13px)');
+                border-top: 1px solid #707070;
+                border-right: 1px solid #707070;
+                transform: rotate(45deg);
+                margin-right: 5px;
+                vertical-align: middle;
+            }
+
+            &:focus,
+            &:hover {
+                &::after {
+                    border-color: #fff;
+                    opacity: .75;
+                }
+            }
+        }
+    }
+    
+    .wp-pagenavi {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+    
+        a.page,
+        .current {
+            margin-left: unquote('min((14/375)*100vw,14px)');
+        }
+    
+        a.page,
+        .current,
+        .previouspostslink,
+        .nextpostslink {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: unquote('min((45/375)*100vw,45px)');
+            height: unquote('min((45/375)*100vw,45px)');
+            font-size: clamp_size(14, 16);
+            font-family: $font-family-english;
+            color: #1D1D1D;
+            border: 1px solid #707070;
+        }
+        
+        a.page,
+        .previouspostslink,
+        .nextpostslink {
+            transition: .25s;
+    
+            &:focus,
+            &:hover {
+                color: #fff;
+                background: #202037;
+                border: 1px solid #202037;
+                opacity: .75;
+            }
+        }
+    
+        .current {
+            color: #fff;
+            background: #202037;
+            border: 1px solid #202037;
+            pointer-events: none;
+        }
+    
+        .previouspostslink {
+            position: relative;
+    
+            &::after {
+                content: "";
+                position: absolute;
+                display: inline-block;
+                top: 50%;
+                right: 28%;
+                width: unquote('min((13/375)*100vw,13px)');
+                height: unquote('min((13/375)*100vw,13px)');
+                border-bottom: 1px solid #707070;
+                border-left: 1px solid #707070;
+                transform: translateY(-50%) rotate(45deg);
+            }
+        }
+    
+        .nextpostslink {
+            position: relative;
+            margin-left: unquote('min((14/375)*100vw,14px)');
+    
+            &::after {
+                content: "";
+                position: absolute;
+                display: inline-block;
+                top: 50%;
+                left: 28%;
+                width: unquote('min((13/375)*100vw,13px)');
+                height: unquote('min((13/375)*100vw,13px)');
+                border-top: 1px solid #707070;
+                border-right: 1px solid #707070;
+                transform: translateY(-50%) rotate(45deg);
+            }
+        }
+    
+    }
+}

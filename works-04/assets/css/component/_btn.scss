@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+.c-btn {
+    display: block;
+    width: unquote('min(100%, 300px)');
+    margin: 0 auto;
+    padding: clamp_size(26, 34) 0;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 0.126em;
+    border-radius: 100px;
+    background: #202037;
+    border: 4px solid #202037;
+    box-sizing: content-box;
+
+    &-service {
+        @include mq(tab) {
+            width: 100%;
+        }
+    }
+
+    &.slideInBtnAnime {
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+        transition: all .4s $easeInOutCirc;
+    
+        &::after {
+            background: #fff;
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: '';
+            width: 100%;
+            height: 100%;
+            transform: scale(0, 1);
+            transform-origin: left top;
+            transition: .4s $easeInOutCirc;
+            z-index: -1;
+        }
+    
+        &:hover {
+            color: #202037;
+    
+            &::after {
+                transform: scale(1, 1);
+            }
+        }
+    }
+}

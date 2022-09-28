@@ -1,0 +1,205 @@
+@charset "utf-8";
+
+/* ==========================================================================
+# easing
+========================================================================== */
+$ease          : cubic-bezier(0.25, 0.1, 0.25, 1);
+$linear        : cubic-bezier(0, 0, 1, 1);
+$easeIn        : cubic-bezier(0.42, 0, 1, 1);
+$easeOut       : cubic-bezier(0, 0, 0.58, 1);
+$easeInOut     : cubic-bezier(0.42, 0, 0.58, 1);
+
+$easeInSine    : cubic-bezier(0.47, 0, 0.745, 0.715);
+$easeOutSine   : cubic-bezier(0.39, 0.575, 0.565, 1);
+$easeInOutSine : cubic-bezier(0.445, 0.05, 0.55, 0.95);
+$easeInQuad    : cubic-bezier(0.55, 0.085, 0.68, 0.53);
+$easeOutQuad   : cubic-bezier(0.25, 0.46, 0.45, 0.94);
+$easeInOutQuad : cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+$easeInCubic    : cubic-bezier(0.55, 0.055, 0.675, 0.19);
+$easeOutCubic   : cubic-bezier(0.215, 0.61, 0.355, 1);
+$easeInOutCubic : cubic-bezier(0.645, 0.045, 0.355, 1);
+$easeInQuart    : cubic-bezier(0.895, 0.03, 0.685, 0.22);
+$easeOutQuart   : cubic-bezier(0.165, 0.84, 0.44, 1);
+$easeInOutQuart : cubic-bezier(0.77, 0, 0.175, 1);
+
+$easeInQuint    : cubic-bezier(0.755, 0.05, 0.855, 0.06);
+$easeOutQuint   : cubic-bezier(0.23, 1, 0.32, 1);
+$easeInOutQuint : cubic-bezier(0.86, 0, 0.07, 1);
+$easeInExpo     : cubic-bezier(0.95, 0.05, 0.795, 0.035);
+$easeOutExpo    : cubic-bezier(0.19, 1, 0.22, 1);
+$easeInOutExpo  : cubic-bezier(1, 0, 0, 1);
+
+$easeInCirc     : cubic-bezier(0.6, 0.04, 0.98, 0.335);
+$easeOutCirc    : cubic-bezier(0.075, 0.82, 0.165, 1);
+$easeInOutCirc  : cubic-bezier(0.785, 0.135, 0.15, 0.86);
+$easeInBack     : cubic-bezier(0.6, -0.28, 0.735, 0.045);
+$easeOutBack    : cubic-bezier(0.175, 0.885, 0.32, 1.275);
+$easeInOutBack  : cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+/* ==========================================================================
+# animation
+========================================================================== */
+.effect,
+.effectOnLoad {
+    opacity: 0;
+}
+
+/* revealTextAnime
+---------------------------------------------------------- */
+.revealTextAnime,
+.revealTextAnime::after {
+	animation-delay: 0;
+	animation-iteration-count: 1;
+	animation-duration: 800ms;
+	animation-fill-mode: both;
+	animation-timing-function: $easeInOutCirc;
+}
+.effect.revealTextAnime.is-animated,
+.effectOnLoad.revealTextAnime.is-animated {
+    display: inline-block;
+	position: relative;
+	white-space: nowrap;
+	cursor: default;
+	animation-name: clipText;
+	animation-delay: 0;
+	animation-duration: 800ms;
+	animation-iteration-count: 1;
+	opacity: 1;
+	
+	&::after {
+		content: "";
+		position: absolute;
+		z-index: 999;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: #202037;
+		transform: scaleX(0);
+		transform-origin: 0 50%;
+		pointer-events: none;
+		animation-name: textRevealer;
+	}
+
+	&.revealTextBgWhite {
+		&::after {
+			background-color: #fff;
+		}
+	}
+}
+
+@keyframes clipText {
+	from {
+		clip-path: inset(0 100% 0 0);
+	}
+	to {
+		clip-path: inset(0 0 0 0);
+	}
+}
+
+@keyframes textRevealer {
+	0%, 50% {
+		transform-origin: 0 50%;
+	}
+	60%, 100% {
+		transform-origin: 100% 50%;		
+	}
+	60% {
+		transform: scaleX(1);
+	}
+	100% {
+		transform: scaleX(0);
+	}
+}
+
+/* fadeUpAnime
+---------------------------------------------------------- */
+.effect.fadeUpAnime.is-animated {
+    animation-name: fadeUp;
+    animation-duration: 1s;
+    animation-delay: 95ms;
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeUp {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+/* fadeDownAnime
+---------------------------------------------------------- */
+.effectOnLoad.fadeDownAnime.is-animated {
+    animation-name: fadeDown;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeDown {
+    0% {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+/* slideIn
+---------------------------------------------------------- */
+.anime-slideIn {
+	overflow: hidden;
+    display: block;
+}
+.anime-slideIn-inner {
+	display: block;
+}
+
+.js-leftAnime {
+    opacity: 0;
+}
+.is-slide-LeftRight {
+	animation-name: slideTextX100;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes slideTextX100 {
+    from {
+        transform: translateX(-100%);
+            opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.is-slide-RightLeft {
+	animation-name: slideTextX-100;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+    opacity: 0;
+}
+@keyframes slideTextX-100 {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
