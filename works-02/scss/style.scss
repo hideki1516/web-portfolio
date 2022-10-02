@@ -1,0 +1,812 @@
+@charset "utf-8";
+
+/* ==========================================================================
+# mixins
+========================================================================== */
+$breakpoints: (
+  'sp': 'screen and (max-width: 767px)',
+) !default;
+
+@mixin mq($breakpoint: sp) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+/* ==========================================================================
+# fonts
+========================================================================== */
+@font-face {
+  font-family: 'objective';
+  src:  url('../font/Objective-Medium.woff2') format('woff2'),
+        url('../font/Objective-Medium.woff') format('woff');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'objective';
+  src:  url('../font/objective-bold-italic-webfont.woff2') format('woff2'),
+        url('../font/objective-bold-italic-webfont.woff') format('woff');
+  font-style: italic;
+  font-weight: 700;
+}
+
+$font-family-default: 'Noto Sans JP', sans-serif;
+$font-family-english: 'objective', sans-serif;
+
+/* ==========================================================================
+# View Width
+========================================================================== */
+@function vw_pc($pixelsVw) {
+  $pcWidth : 1280;
+  $mathVW : ($pixelsVw / $pcWidth) * 100vw;
+  @return round($mathVW * 1000) / 1000;
+}
+
+@function vw_sp($pixelsVw) {
+  $spWidth : 750;
+  $mathVW : ($pixelsVw / $spWidth) * 100vw;
+  @return round($mathVW * 1000) / 1000;
+}
+
+/* ==========================================================================
+# common - 全体に共通するスタイル
+========================================================================== */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  font-size: 0.78125vw;
+  overflow-x: hidden;
+
+  @include mq(sp) {
+    font-size: 2.66vw;
+  }
+}
+body {
+  font-size: 2rem;
+  font-family: $font-family-default;
+  line-height: (40 / 20);
+  color: #454545;
+  width: 100%;
+  overflow-x: hidden;
+  min-width: 1280px;
+
+  @include mq(sp) {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    min-width: initial;
+  }
+}
+h2, h3 {
+  line-height: 1;
+}
+a {
+  color: #454545;
+}
+img {
+  width: 100%;
+}
+
+.section__title {
+  font-family: $font-family-english;
+  font-weight: 700;
+  font-style: italic;
+  text-align: center;
+
+  .main {
+    position: relative;
+    font-size: 6rem;
+    color: #000;
+    z-index: 10;
+
+    @include mq(sp) {
+      font-size: 3.6rem;
+    }
+
+    &::after {
+      position: absolute;
+      content: attr(data-title);
+      top: 9px;
+      left: 5px;
+      font-size: 6rem;
+      color: #fff;
+      -webkit-text-stroke: 2px #7AD6BB;
+      z-index: -1;
+
+      @include mq(sp) {
+        font-size: 3.6rem;
+        top: 6px;
+        left: 4px;
+      }
+    }
+  }
+
+  .sub {
+    display: block;
+    font-size: 2.4rem;
+    color: #7AD6BB;
+    padding-bottom: 34px;
+
+    @include mq(sp) {
+      font-size: 1.4rem;
+      padding-bottom: 12px;
+    }
+  }
+}
+
+.num__title {
+  font-size: 3.2rem;
+
+  @include mq(sp) {
+    font-size: 1.6rem;
+  }
+
+  .num {
+    font-size: 10rem;
+    font-family: $font-family-english;
+    font-weight: 700;
+    font-style: italic;
+    color: #000;
+    padding: 0 .2em;
+
+    @include mq(sp) {
+      font-size: 4rem;
+    }
+  }
+}
+
+/* ==========================================================================
+# header
+========================================================================== */
+.header {
+  position: relative;
+  z-index: 100;
+
+  &__inner {
+    position: absolute;
+    top: vw_pc(36);
+    left: vw_pc(36);
+  }
+
+  &__title {
+    width: vw_pc(130);
+
+    @include mq(sp) {
+      width: vw_sp(112);
+    }
+
+    &-link {
+      display: block;
+    }
+  }
+}
+
+/* ==========================================================================
+# top
+========================================================================== */
+.top {
+  position: relative;
+  padding-bottom: vw_pc(210);
+
+  &__wrap {
+    position: relative;
+    padding-top: 45.15%;
+    overflow: hidden;
+
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      max-width: 100%;
+    }
+  }
+
+  &__title {
+    position: absolute;
+    left: vw_pc(128);
+    bottom: 0;
+
+    &-text {
+      font-size: vw_pc(180);
+      font-family: $font-family-english;
+      font-weight: 700;
+      font-style: italic;
+      color: #7AD6BB;
+      line-height: (220 / 180);
+    }
+  }
+}
+
+/* ==========================================================================
+# about
+========================================================================== */
+.about {
+  padding: vw_pc(240) 0 vw_pc(270);
+
+  @include mq(sp) {
+    padding: vw_sp(100) 0 vw_sp(140);
+  }
+
+  &__wrap {
+    width: vw_pc(815);
+    margin: 0 auto;
+
+    @include mq(sp) {
+      width: 100%;
+      padding: 0 vw_pc(128);
+    }
+  }
+
+  &__title {
+    font-size: 3.2rem;
+    font-weight: bold;
+    text-align: center;
+
+    @include mq(sp) {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__text {
+    font-size: 2.4rem;
+    line-height: (48 / 24);
+    margin-top: vw_pc(40);
+
+    @include mq(sp) {
+      font-size: 1.4rem;
+      margin-top: vw_sp(40);
+    }
+
+    &:nth-child(n + 3) {
+      margin-top: vw_pc(50);
+    }
+  }
+}
+
+/* ==========================================================================
+# skills
+========================================================================== */
+.skills {
+  position: relative;
+  padding: vw_pc(164) 0 vw_pc(240);
+  background: #F2F2F2;
+
+  @include mq(sp) {
+    padding: vw_sp(112) 0;
+  }
+
+  &::after {
+    position: absolute;
+    top: vw_pc(96);
+    left: vw_pc(104);
+    content: "Portfolio";
+    writing-mode: vertical-rl;
+    font-size: 30rem;
+    font-family: $font-family-english;
+    font-weight: 700;
+    font-style: italic;
+    color: #fff;
+    letter-spacing: 0.04em;
+    line-height: 0;
+    z-index: 15;
+
+    @include mq(sp) {
+      font-size: 14rem;
+      left: vw_sp(96);
+    }
+  }
+
+  &__inner {
+    position: relative;
+    margin-top: vw_pc(206);
+
+    @include mq(sp) {
+      margin-top: vw_sp(128);
+    }
+  }
+
+  &__wrap {
+    position: relative;
+
+    &.-design {
+      margin-top: vw_pc(330);
+
+      @include mq(sp) {
+        margin-top: vw_sp(80);
+      }
+    }
+  }
+
+  &__contents {
+    position: relative;
+    z-index: 20;
+    width: vw_pc(1025);
+    margin: 0 auto;
+  }
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+
+    @include mq(sp) {
+      flex-direction: column;
+    }
+  
+    &.-reverse {
+      flex-direction: row-reverse;
+
+      @include mq(sp) {
+        flex-direction: column;
+      }
+    }
+
+    &.-cording {
+      margin-top: vw_pc(50);
+
+      @include mq(sp) {
+        margin-top: vw_sp(40);
+      }
+    }
+
+    &.-design {
+      margin-top: vw_pc(70);
+
+      @include mq(sp) {
+        margin-top: vw_sp(40);
+      }
+    }
+  }
+  
+  &__image {
+    width: vw_pc(500);
+
+    @include mq(sp) {
+      width: 100%;
+    }
+  }
+  
+  &__disc {
+    width: vw_pc(420);
+
+    @include mq(sp) {
+      width: 100%;
+      margin-top: vw_sp(24);
+    }
+  }
+
+  &__block {
+    position: absolute;
+    width: vw_pc(837);
+    background-color: #7AD6BB;
+    z-index: 10;
+
+    &::before {
+      content:"";
+      display: block;
+      padding-top: 54%;
+    }
+
+    @include mq(sp) {
+      width: 100%;
+    }
+  
+    &.-l {
+      top: vw_pc(-90);
+      left: 0;
+    }
+  
+    &.-r {
+      top: vw_pc(-86);
+      right: 0;
+    }
+  }
+
+  .num__title {
+    &.-cording {
+      margin-left: vw_pc(100);
+
+      @include mq(sp) {
+        margin-left: 0;
+      }
+    }
+
+    &.-design {
+      text-align: right;
+
+      @include mq(sp) {
+        text-align: left;
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+# works
+========================================================================== */
+.works {
+
+  &__inner {
+    position: relative;
+    padding: vw_pc(212) 0 vw_pc(90);
+
+    @include mq(sp) {
+      padding: vw_sp(112) 0;
+    }
+
+    &::before {
+      position: absolute;
+      top: 0;
+      width: 1px;
+      height: 100%;
+      content: '';
+      background-color: #707070;
+      left: 4.84%;
+  
+      @include mq(sp) {
+        left: 18px;
+      }
+    }
+  }
+
+  &__list {
+    margin-top: vw_pc(90);
+
+    @include mq(sp) {
+      margin-top: vw_sp(80);
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 50%;
+      left: 2.81%;
+      transform: translateY(-50%);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 16px solid #7AD6BB;
+      background: #fff;
+      z-index: 10;
+
+      @include mq(sp) {
+        width: 20px;
+        height: 20px;
+        border: 6px solid #7AD6BB;
+        left: 9px;
+      }
+    }
+
+    &:not(:first-child) {
+      margin-top: vw_pc(158);
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    width: vw_pc(1025);
+    margin: 0 auto;
+
+    @include mq(sp) {
+      flex-direction: column;
+    }
+  }
+
+  &__image {
+    width: vw_pc(496);
+
+    @include mq(sp) {
+      width: 100%;
+    }
+  }
+
+  &__detail {
+    width: vw_pc(500);
+
+    @include mq(sp) {
+      width: 100%;
+      margin-top: vw_sp(40);
+    }
+  }
+
+  &__date {
+    font-size: 3.2rem;
+    font-family: $font-family-english;
+    font-weight: 400;
+    line-height: 1;
+
+    @include mq(sp) {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__desc {
+    margin-top: vw_pc(20);
+  }
+
+  &__mind {
+    width: vw_pc(815);
+    margin: 0 auto;
+    margin-top: vw_pc(120);
+
+    @include mq(sp) {
+      width: 100%;
+      padding: 0 8%;
+      margin-top: vw_sp(120);
+    }
+
+    &-title {
+      font-size: 3.2rem;
+      line-height: 1;
+
+      @include mq(sp) {
+        font-size: 1.8rem;
+        text-align: center;
+      }
+    }
+
+    &-text {
+      margin-top: vw_pc(20);
+
+      @include mq(sp) {
+        margin-top: vw_sp(32);
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+# results
+========================================================================== */
+.results {
+  padding: vw_pc(214) 0 vw_pc(70);
+  background: #F0F0F0;
+
+  @include mq(sp) {
+    padding: vw_sp(112) 0;
+  }
+
+  &__inner {
+    width: vw_pc(1025);
+    margin: 0 auto;
+  }
+
+  &__wrap {
+    position: relative;
+    min-height: vw_pc(1240);
+    margin-top: vw_pc(-150);
+
+    @include mq(sp) {
+      margin: vw_sp(80) 0;
+    }
+  }
+
+  &__contents {
+    position: relative;
+    z-index: 20;
+
+    &.-send {
+      left: vw_pc(306);
+
+      @include mq(sp) {
+        left: 0;
+      }
+    }
+
+    &.-coffee {
+      left: vw_pc(542);
+      bottom: vw_pc(130);
+
+      @include mq(sp) {
+        left: 0;
+        bottom: 0;
+      }
+    }
+  }
+
+  &__text {
+    &.-send {
+      width: vw_pc(480);
+      margin-top: vw_pc(80);
+      margin-left: vw_pc(108);
+
+      @include mq(sp) {
+        width: 100%;
+        margin-top: vw_sp(20);
+        margin-left: 0;
+      }
+    }
+
+    &.-coffee {
+      width: vw_pc(570);
+      margin-top: vw_pc(54);
+      margin-left: vw_pc(-227);
+
+      @include mq(sp) {
+        width: 100%;
+        margin-top: vw_sp(20);
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__image {
+    position: absolute;
+    z-index: 15;
+    
+    &.is-01 {
+      top: 0;
+      left: vw_pc(-105);
+      width: vw_pc(414);
+    }
+
+    &.is-02 {
+      top: vw_pc(235);
+      right: 0;
+      width: vw_pc(360);
+    }
+
+    &.is-03 {
+      top: vw_pc(372);
+      left: vw_pc(140);
+      width: vw_pc(360);
+    }
+
+    &.is-04 {
+      top: vw_pc(640);
+      right: vw_pc(105);
+      width: vw_pc(360);
+    }
+
+    &.is-05 {
+      top: vw_pc(820);
+      left: 0;
+      width: vw_pc(525);
+    }
+  }
+
+  &__block {
+    position: absolute;
+    width: vw_pc(525);
+    height: vw_pc(313);
+    background-color: #7AD6BB;
+    
+    &.-l {
+      top: vw_pc(185);
+      left: vw_pc(80);
+    }
+
+    &.-r {
+      bottom: 0;
+      right: vw_pc(180);
+    }
+  }
+}
+
+/* ==========================================================================
+# history
+========================================================================== */
+.history {
+  padding: vw_pc(270) 0;
+
+  @include mq(sp) {
+    padding: vw_sp(112) 0;
+  }
+
+  &__inner {
+    width: vw_pc(816);
+    margin: 0 auto;
+    margin-top: vw_pc(100);
+
+    @include mq(sp) {
+      width: 100%;
+      padding: 0 4%;
+      margin-top: vw_sp(80);
+    }
+  }
+
+  &__contents {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+  }
+
+  &__wrap {
+    padding: vw_pc(36) 0;
+    border-top: 2px solid #000;
+
+    &.-date {
+      border-color: #7AD6BB;
+    }
+  }
+
+  &__date {
+    width: 22.79%;
+    color: #7AD6BB;
+    font-family: $font-family-english;
+    font-style: italic;
+    text-align: right;
+  }
+
+  &__title {
+    width: 74.14%;
+  }
+}
+
+/* ==========================================================================
+# value
+========================================================================== */
+.value {
+  
+  &__inner {
+    padding: vw_pc(226) 0 vw_pc(120);
+    background: #262626;
+
+    @include mq(sp) {
+      padding: vw_sp(112) 0;
+    }
+  }
+
+  &__title {
+    width: vw_pc(670);
+    margin: 0 auto;
+
+    @include mq(sp) {
+      width: 100%;
+      padding: 0 8%;
+    }
+
+    &-text {
+      font-size: 4.8rem;
+      color: #fff;
+
+      @include mq(sp) {
+        font-size: 2.8rem;
+      }
+    }
+  }
+
+  &__slide {
+    .swiper-slide {
+      width: vw_pc(733);
+      height: vw_pc(435);
+    }
+  }
+
+  &__message {
+    background: url("../images/bg_value.png") no-repeat;
+    background-position: bottom 20% center;
+    background-size: cover;
+    padding: vw_pc(206) vw_pc(232);
+
+    &-wrap {
+      width: vw_pc(816);
+      margin: 0 auto;
+    }
+
+    &-text {
+      color: #fff;
+
+      &:not(:first-child) {
+        margin-top: vw_pc(30);
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+# footer
+========================================================================== */
+.footer {
+  height: 346px;
+  background: #7AD6BB;
+}
