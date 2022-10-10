@@ -19,7 +19,6 @@
             font-size: clamp_size(24, 32);
             font-weight: bold;
             color: #343434;
-            line-height: (24 / 32);
             padding: 0.85em 0;
             border-top: 1px solid #707070;
             border-bottom: 1px solid #707070;
@@ -68,10 +67,21 @@
         }
         
         &-meta {
+            display: inline-block;
             font-size: clamp_size(12, 16);
             font-family: $font-family-english;
             font-weight: 600;
             color: #A4ABB0;
+        }
+
+        &-case {
+            display: inline-block;
+            font-size: clamp_size(12, 14);
+            font-family: $font-family-english;
+            font-weight: 600;
+            color: #fff;
+            background: #A4ABB0;
+            padding: 0 0.428em;
         }
         
         &-title {
@@ -118,7 +128,7 @@
         display: flex;
         justify-content: center;
         width: unquote('min(84%, 714px)');
-        margin: 0 auto;
+        margin: 0 auto clamp_size(52, 105);
 
         @include mq(sp) {
             width: 100%;
@@ -173,7 +183,6 @@
     }
 
     &__recommend {
-        padding-top: clamp_size(52, 105);
 
         &-title {
             font-size: clamp_size(16, 20);

@@ -1,6 +1,6 @@
   <!-- map -->
   <div class="c-map effect fadeUpAnime">
-    <?php if (is_home() || is_front_page()) : ?>
+    <?php if (is_front_page()) : ?>
       <div id="js-map" class="c-map__top"></div>
     <?php elseif (is_page('about')) : ?>
       <div id="js-map" class="c-map__about"></div>

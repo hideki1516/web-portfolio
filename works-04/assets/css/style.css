@@ -839,7 +839,7 @@ button {
   letter-spacing: 0.125em;
 }
 .l-header__nav-item + .l-header__nav-item {
-  margin-left: 3.25em;
+  margin-left: clamp(1.6rem, 0.1082872928rem + 3.9779005525vw, 5.2rem);
 }
 @media screen and (max-width: 765px) {
   .l-header__nav-item + .l-header__nav-item {
@@ -856,16 +856,20 @@ button {
           animation-delay: 120ms;
 }
 .l-header__nav-item:nth-child(3) {
-  -webkit-animation-delay: 135ms;
-          animation-delay: 135ms;
+  -webkit-animation-delay: 220ms;
+          animation-delay: 220ms;
 }
 .l-header__nav-item:nth-child(4) {
   -webkit-animation-delay: 330ms;
           animation-delay: 330ms;
 }
 .l-header__nav-item:nth-child(5) {
-  -webkit-animation-delay: 525ms;
-          animation-delay: 525ms;
+  -webkit-animation-delay: 440ms;
+          animation-delay: 440ms;
+}
+.l-header__nav-item:nth-child(6) {
+  -webkit-animation-delay: 540ms;
+          animation-delay: 540ms;
 }
 .l-header__nav-link {
   position: relative;
@@ -1883,7 +1887,6 @@ button {
   font-size: clamp(2.4rem, 2.0685082873rem + 0.8839779006vw, 3.2rem);
   font-weight: bold;
   color: #343434;
-  line-height: 0.75;
   padding: 0.85em 0;
   border-top: 1px solid #707070;
   border-bottom: 1px solid #707070;
@@ -1921,10 +1924,20 @@ button {
   margin-top: clamp(2rem, 1.1712707182rem + 2.2099447514vw, 4rem);
 }
 .p-detail__header-meta {
+  display: inline-block;
   font-size: clamp(1.2rem, 1.0342541436rem + 0.4419889503vw, 1.6rem);
   font-family: "Avenir", sans-serif;
   font-weight: 600;
   color: #A4ABB0;
+}
+.p-detail__header-case {
+  display: inline-block;
+  font-size: clamp(1.2rem, 1.1171270718rem + 0.2209944751vw, 1.4rem);
+  font-family: "Avenir", sans-serif;
+  font-weight: 600;
+  color: #fff;
+  background: #A4ABB0;
+  padding: 0 0.428em;
 }
 .p-detail__header-title {
   font-size: clamp(2.4rem, 2.0685082873rem + 0.8839779006vw, 3.2rem);
@@ -1960,7 +1973,7 @@ button {
   display: flex;
   justify-content: center;
   width: min(84%, 714px);
-  margin: 0 auto;
+  margin: 0 auto clamp(5.2rem, 3.0038674033rem + 5.8563535912vw, 10.5rem);
 }
 @media screen and (max-width: 765px) {
   .p-detail__share {
@@ -2011,9 +2024,6 @@ button {
   justify-content: center;
   height: 100%;
   font-weight: bold;
-}
-.p-detail__recommend {
-  padding-top: clamp(5.2rem, 3.0038674033rem + 5.8563535912vw, 10.5rem);
 }
 .p-detail__recommend-title {
   font-size: clamp(1.6rem, 1.4342541436rem + 0.4419889503vw, 2rem);

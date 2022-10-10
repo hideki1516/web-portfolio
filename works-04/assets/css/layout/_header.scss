@@ -68,7 +68,7 @@
 			letter-spacing: 0.125em;
 
 			& + & {
-				margin-left: 3.25em;
+				margin-left: clamp_size(16, 52);
 
 				@include mq(sp) {
 					margin-left: 0;
@@ -83,13 +83,16 @@
 				animation-delay: 120ms;
 			}
 			&:nth-child(3) {
-				animation-delay: 135ms;
+				animation-delay: 220ms;
 			}
 			&:nth-child(4) {
 				animation-delay: 330ms;
 			}
 			&:nth-child(5) {
-				animation-delay: 525ms;
+				animation-delay: 440ms;
+			}
+			&:nth-child(6) {
+				animation-delay: 540ms;
 			}
 		}
 

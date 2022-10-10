@@ -42,7 +42,7 @@
   <!-- // header -->
 
   <!-- entry -->
-  <?php if (!is_front_page() && !is_single()) : ?>
+  <?php if (!is_front_page() && !is_single() && !is_archive()) : ?>
     <div class="c-entry">
       <div class="c-entry__wrap">
         <h2 class="c-entry__title"><span class="anime-slideIn js-leftAnime"><span class="anime-slideIn-inner js-leftAnime-inner"><?php echo get_main_title(); ?></span></span></h2>

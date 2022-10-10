@@ -127,7 +127,7 @@
 			$blog_archive = get_blog_archive(6);
 			if ($blog_archive->have_posts()) : while ($blog_archive->have_posts()) : $blog_archive->the_post();
 			?>
-					<?php get_template_part('template/front-archive'); ?>
+					<?php get_template_part('template/archive-card'); ?>
 				<?php endwhile; ?>
 			<?php else : ?>
 				<p>最新の記事はありません</p>
@@ -137,6 +137,28 @@
 		<div class="p-top__blog-footer effect fadeUpAnime"><a href="<?php echo esc_url(home_url('/blog/')); ?>" class="c-btn slideInBtnAnime">一覧を見る</a></div>
 	</section>
 	<!-- // blog -->
+
+	<section class="p-top__blog">
+		<h2 class="p-top__section-title effect revealTextAnime">CASE</h2>
+		<ul class="p-top__blog-list">
+			<?php
+			$args = array(
+				'posts_per_page' => 3, // 表示させたい記事数
+				'post_type' => 'case', // カスタム投稿タイプ
+			);
+			$case_query = new WP_Query($args);
+			?>
+			<?php if ($case_query->have_posts()) : ?>
+				<?php while ($case_query->have_posts()) : $case_query->the_post(); ?>
+					<?php get_template_part('template/case-archive-card'); ?>
+				<?php endwhile; ?>
+			<?php else : ?>
+				<p>関連の記事はありません</p>
+			<?php endif; ?>
+			<?php wp_reset_postdata(); ?>
+		</ul>
+		<div class="p-top__blog-footer effect fadeUpAnime"><a href="<?php echo esc_url(home_url('/case/')); ?>" class="c-btn slideInBtnAnime">一覧を見る</a></div>
+	</section>
 </main>
 
 <?php get_footer(); ?>

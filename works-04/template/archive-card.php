@@ -12,6 +12,10 @@
     </div>
     <p class="c-card__data is-pc"><time datetime=""><?php the_time(get_option('date_format')); ?></time></p>
     <h3 class="c-card__title"><?php the_title(); ?></h3>
-    <p class="c-card__text"><?php echo get_flexible_excerpt(14); ?></p>
+    <?php if (is_front_page()) : ?>
+      <p class="c-card__text"><?php echo get_flexible_excerpt(42); ?></p>
+    <?php else : ?>
+      <p class="c-card__text"><?php echo get_flexible_excerpt(14); ?></p>
+    <?php endif; ?>
   </a>
 </li>

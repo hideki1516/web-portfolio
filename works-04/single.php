@@ -38,7 +38,7 @@
             $blog_archive = get_blog_archive(3);
             if ($blog_archive->have_posts()) : while ($blog_archive->have_posts()) : $blog_archive->the_post();
             ?>
-                    <?php get_template_part('template/common-archive'); ?>
+                    <?php get_template_part('template/archive-card'); ?>
                 <?php endwhile; ?>
             <?php else : ?>
                 <p>最新の記事はありません</p>
